@@ -1,0 +1,879 @@
+/* App.css */
+$greyDark:  #040404;
+$geryLight:#131313;
+$greyLighter: #282828;
+$greyText:#b3b3b3;
+$greyNav:#090909;
+$greenMain: #1db954;
+@font-face{
+  font-family:circular-Book;
+  src:url(./font/CircularStd-Book.otf);
+}
+@font-face{
+  font-family:circular-Bold;
+  src:url(./font/CircularStd-Bold.otf);
+}
+@font-face{
+  font-family:circular-BoldItalic;
+  src:url(./font/CircularStd-BoldItalic.otf);
+}
+@font-face{
+  font-family:circular-Black;
+  src:url(./font/CircularStd-Black.otf);
+}
+
+*{
+  box-sizing: border-box;
+}
+
+.body{
+  font-family: circular-Book;
+}
+
+.App{
+height: calc(100vh - 90px);
+background: $geryLight;
+display: flex;
+}
+
+.navBar {
+  width: 260px;
+  height: 100%;
+  background: $greyDark;
+  padding: 10px 10px 0;
+  display: flex;
+  flex-direction: column;
+  .logo {
+    padding: 1rem 0.8rem;
+    svg {
+      max-width: 130px;
+      fill: white;
+      p {
+        fill: white;
+      }
+    }
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+    a {
+      color: inherit;
+      text-decoration: none;
+
+      &:visited {
+        color: inherit;
+        text-decoration: none;
+      }
+    }
+    li {
+      color: $greyText;
+      list-style-type: none;
+      border-radius: 5px;
+      padding: 0.5rem 0.8rem;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      font-family: circular-bold;
+      display: flex;
+      align-items: center;
+
+      svg {
+        fill: currentColor;
+        margin-right: 15px;
+      }
+      &.active {
+        background: $greyLighter;
+        color: white;
+        svg {
+          fill: white;
+        }
+      }
+      &:hover {
+        color: white;
+      }
+    }
+  }
+  .cookies{
+    font-size: 0.8rem;
+    color: $greyText;
+    text-align: center;
+    margin-top: auto;
+    span{
+      display: block;
+    }
+  }
+}
+
+.outerWrap{
+  background: rgb(170, 70, 70);
+  height: 100vh;
+  min-height: 100%;
+}
+
+.musicControls{
+  .songImage{
+    width: 120px;
+    min-height: 40px;
+    height: 80px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
+    img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 3px;
+      margin-left: 5px;
+    }
+  }
+  background: rgb(170, 70, 70);
+  text-align: center;
+  height: 90px;
+  display: flex;
+  align-items: center;
+    font-family: circular-Bold;
+  justify-content: center;
+  color: black;
+  z-index: 2;
+  position: relative;
+  border-top: 1px solid $greyDark;
+}
+
+.upperNav{
+  background: rgba(9,9,9,.78);
+  height: 56px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  color: white;
+  padding: 0.5rem 2rem;
+  position: fixed;
+  top: 0;
+  z-index: 2;
+}
+
+
+.subtext{
+  color: white;
+  font-size: larger;
+  margin-left: 20px;
+}
+
+.main{
+width: 100%;
+overflow-y: scroll;
+position: relative;
+padding-top: 3rem;
+.mainContent{
+  color: white;
+  .maininner{
+    padding: 0.5rem 2rem;
+  }
+  h1{
+    font-size: 1.8rem;
+  }
+  hr {
+    border: none;
+    height: 1px;
+    /* Set the hr color */
+    color: yellow;  /* old IE */
+    background-color: #333;  /* Modern Browsers */
+  }
+}
+}
+
+
+.cardWrap{
+  padding: 1.2rem;
+  h1{
+   margin-bottom: 0;
+  }
+  .subtext{
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .card{
+    background: $greyLighter;
+    border-radius: 10px;
+    margin-right: 0.2rem;
+    width: 200px;
+    overflow: hidden;
+    padding: 1.2rem 1.2rem 0.8rem;
+    box-shadow: 0 10px 30px 0 rgba(0,0,0,.3) 0 1px 2px 0 rgba(0,0,0,.2);
+    &:hover{
+      .playicon{
+        opacity: 1;
+      }
+    }
+    .cardImg{
+        height: 150px;
+        box-shadow: 0 10px 30px 0 rgba(0,0,0,.3) 0 1px 2px 0 rgba(0,0,0,.2);
+        img{
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+    }
+    .cardContent{
+      padding: 0.4rem 0;
+      h3{
+        font-weight: 600;
+        font-size: 0.9rem;
+        color: white;
+        margin-bottom: 0;
+      }
+      span{
+        font-size: 0.8rem;
+        color: $greyText;
+      }
+    }
+  }
+
+}
+
+.playicon{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  background: $greenMain;
+  opacity: 0;
+  margin-left: auto;
+  position: absolute;
+  right: 1.2rem;
+  bottom: 1.2rem;
+  svg{
+    margin: auto;
+  }
+}
+
+.cardWrapInner{
+  display: flex;
+
+}
+
+.upper{
+  text-transform: uppercase;
+}
+.smalltext{
+font-size: 0.9rem;
+letter-spacing: 0.8px;
+&.bold{
+
+}
+font-weight: 600;
+}
+.playlistPage {
+  background-color: rgb(214, 214, 214);
+  overflow-y: scroll;
+  width: 100%;
+  .mainInner {
+    background-image: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      from(rgba(0, 0, 0, 0.5)),
+      color-stop(40%, #121212)
+    );
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), #121212 40%);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .playlistPageInfo {
+    // width: 300px;
+    text-align: center;
+    padding: 1.5rem 0;
+    display: flex;
+    position: fixed;
+    z-index: 2;
+    .playlistPageImage {
+      width: 250px;
+      height: 250px;
+      margin-top: 20px;
+      margin-left: 20px;
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        -webkit-box-shadow: 0 4px 60px rgba(0, 0, 0, 0.5);
+        box-shadow: 0 4px 60px rgba(0, 0, 0, 0.5);
+      }
+    }
+  }
+  .playlistPageSongs {
+    height: 100%;
+    color: white;
+    margin-top: 300px;
+    .playlistButtons {
+      display: flex;
+      align-items: center;
+      .playIcon {
+        @extend .playIcon;
+        
+        height: fit-content;
+        width: fit-content;
+        border-radius: 50%;
+        overflow: hidden;
+        background: $greenMain;
+        opacity: 1;
+        position: relative;
+        margin-left: 10px;
+        svg {
+          height: 45px;
+          width: 45px;
+        }
+      }
+    }
+    
+    .icons {
+      .icon {
+        margin-left: 1.5rem;
+      }
+      .iconsHeart {
+        width: 28px;
+        height: 28px;
+        svg {
+          fill: white;
+        }
+      }
+    }
+  }
+  .playlistPageContent {
+    text-align: left;
+    padding: 1.5rem 2rem;
+    color: white;
+    h1 {
+      font-size: 4rem;
+      margin: 0;
+      line-height: 1;
+      font-family: circular-black;
+      
+    }
+    .tagline {
+      font-size: 0.9rem;
+      opacity: 0.7;
+      margin-bottom: 0.5rem;
+    }
+    .playlistPageDesc {
+      display: flex;
+      align-items: center;
+      font-size: 0.9rem;
+      p {
+        margin: 0;
+      }
+      span {
+        opacity: 0.7;
+        position: relative;
+        padding-left: 20px;
+        &:before {
+          content: '';
+          width: 4px;
+          height: 4px;
+          background: white;
+          overflow: hidden;
+          border-radius: 50%;
+          position: absolute;
+          margin-left: -10px;
+          top: 9px;
+        }
+      }
+    }
+  }
+}
+
+
+ul.songList {
+  padding: 0;
+  li {
+    list-style-type: none;
+    width: 100%;
+    padding: 0.8rem;
+    display: flex;
+    align-items: center;
+    transition: background 0.2s ease-in-out;
+    &:hover {
+      background: rgba(255, 255, 255, 0.1);
+      .songIcon {
+        
+        .noteI {
+          display: none;
+        }
+        .playI {
+          display: block;
+        }
+      }
+    }
+    .songDetails {
+      margin-left: 20px;
+      h3 {
+       
+        font-weight: 300;
+        font-family: circular-Book;
+        font-size: 1rem;
+      }
+      span {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.9rem;
+      }
+    }
+    .songTime {
+      margin-left: auto;
+    }
+    .songIcon {
+      padding-right: 1rem;
+      .playI {
+        display: none;
+      }
+      svg {
+        fill: rgba(255, 255, 255, 0.7);
+        width: 15px;
+        height: 15px;
+      }
+    }
+  }
+}
+
+.admin{
+  color: white;
+  overflow-y: scroll;
+  text-align: center;
+  padding-left: 20px;
+  font-size: 1.3rem;
+  padding-bottom: 20px;
+  width: 100%;
+  padding-right: 20px;
+  padding-top: 20px;
+  h1{
+    text-align: center;
+    margin-top: 10px;
+    font-family: circular-Bold;
+  }
+}
+
+
+.addSong{
+  color: white;
+  overflow-y: scroll;
+  text-align: center;
+  padding-left: 20px;
+  font-size: 1.3rem;
+  padding-bottom: 20px;
+  padding-right: 20px;
+  width: 100%;
+  padding-top: 20px;
+  h1{
+    font-family: circular-Bold;
+  }
+  
+}
+
+.slider-container {
+  --progress-bar-height: 4px;
+}
+
+.slider-container {
+  position: relative;
+  width: 100%;
+}
+
+/* Background */
+.slider-container::before {
+  content: '';
+  background-color: white;
+  width: 99%;
+  height: calc(var(--progress-bar-height) - 1px);
+  display: block;
+  position: absolute;
+  border-radius: 10px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+/* Custom Progress Bar */
+.progress-bar-cover {
+  background-color: rgb(218, 55, 145);
+  width: 0%;
+  height: var(--progress-bar-height);
+  display: block;
+  position: absolute;
+  border-radius: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  user-select: none;
+  pointer-events: none;
+}
+
+/*  Hide Original */
+.range {
+  -webkit-appearance: none;
+  background-color: rgba(240, 9, 9, 0.397);
+  height: 10px;
+  width: 100%;
+  cursor: pointer;
+  opacity: 0;
+  margin: 0 auto;
+}
+
+.slider-container {
+  --thumb-width: 20px;
+  --thumb-height: 20px;
+}
+
+.range::-webkit-slider-thumb {
+  width: var(--thumb-width);
+  height: var(--thumb-height);
+
+  background: #350f2d;
+  border: 1px solid #000000;
+  border-radius: 50%;
+  cursor: pointer;
+  -webkit-appearance: none;
+}
+
+.thumb {
+  width: var(--thumb-width);
+  height: var(--thumb-height);
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.753);
+  z-index: 3;
+  background: rgb(255, 255, 255);
+  position: absolute;
+  border-radius: 50%;
+  top: 50%;
+  transform: translate(0%, -50%);
+  pointer-events: none; /* Remove pointer events on thumb so user can click on the actual thumb beaneath it!  */
+  user-select: none; /*  Prevent Accidentally highlighting the number while sliding the cursor  */
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  flex-grow: 1;
+}
+
+.btn-play {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 20px 0 20px 30px;
+  border-color: transparent transparent transparent #ffffff;
+  cursor: pointer;
+}
+
+.btn-stop {
+  height: 40px;
+  width: 30px;
+  border-left: 10px solid rgb(255, 255, 255);
+  border-right: 10px solid rgb(255, 255, 255);
+  cursor: pointer;
+}
+
+.control-panel {
+  padding: 15px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.timer {
+  font-size: 10px;
+  font-weight: 200;
+  color: rgb(196, 196, 196);
+}
+
+.Nosong{
+  h1{
+  padding-left: 20px;
+  text-align: center;
+  font-family: circular-Book;
+  }
+}
+
+.linkStyle {
+  text-decoration: none;
+  color: inherit;
+}
+
+.top{
+  
+  .left{
+
+  }
+  .middle{
+      img{
+        height: 20px;
+        width: 20px;
+      }
+    
+    }
+  .right{
+
+  }
+}
+
+.musicPlayer{
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  position: relative;
+  .songImage{
+    width: 80px;
+    min-height: 40px;
+    height: 80px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
+    img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .songAttribute{
+    width: 100%;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .top{
+       display: flex;
+       align-items: center;
+       justify-content: space-between;
+       width: 100%;
+       .left,.middle,.right{
+         color: #59595959;
+         font-size: 16px;
+         cursor: pointer;
+         display: flex;
+         align-items: center;
+         img{
+          margin: 0px 15px;
+         }
+         .middle{
+          .playpause{
+            width: 30px;
+            height: 30px;
+            min-width: 30px;
+            border-radius: 100%;
+            background:#f1f1f1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+          .back,.forward{
+            img{
+               color: #9a9a9a !important;
+          }}
+         }
+       }
+    }
+    .bottom{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      margin-top: 20px;
+      padding: 0px 15px;
+      .progressBar{
+        width: 78%;
+        position: relative;
+        height: 5px;
+        outline: none;
+        border: none;
+        appearance: none;
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.1);
+        cursor: pointer;
+        ::before{
+          position: absolute;
+          content: '';
+          top: 0;
+          left: 0;
+          background: #848484;
+          width: 50%;
+          height: 100%;
+          border-radius: 10px;
+          z-index: 2;
+          transition: all 0.3s ease;
+        }
+        ::-webkit-slider-thumb{
+          -webkit-appearance: none;
+          width: 15px;
+          height: 15px;
+          border-radius: 50%;
+          border: none;
+          outline: none;
+        }
+        
+      }
+    }
+  }
+}
+
+.songImage{
+  width: 80px;
+  min-height: 40px;
+  height: 80px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
+  img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.mainabout{
+  width: 100%;
+  overflow-y: scroll;
+  position: relative;
+  padding-top: 1rem;
+  .tagline{
+    
+    h2{
+      font-family: circular-Book;
+      text-align: center;
+      color: white;
+    }
+  }
+  .textpoint{
+    color: white;
+    font-size: 1rem;
+  }
+  .aboutimage{
+    img{
+      position: fixed;
+      height: 400px;
+      width: 500px;
+      margin-left:800px ;
+    }
+  }
+  .heading{
+   h2{
+    font-size: 1rem;
+    color:white;
+   }
+  }
+  .textstyle{
+   font-family:circular-Bold;
+   color: rgb(198, 191, 191);
+  }
+}
+
+
+.contactus{
+  overflow-y: scroll;
+  position: relative;
+  padding-top: 1rem;
+  text-align: center;
+  
+  width: 100%;
+  color: white;
+  .formclass{
+    font-family: circular-Bold;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .logo{
+  margin-left: 40px;
+  color: white;
+}
+}
+
+.searchbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  flex-direction: column;
+  row-gap: 20px;
+  padding: 20px;
+  background: $geryLight;// Or any other color you prefer
+  width: 100%;
+  position: relative;
+  z-index: 2;
+  background: rgba(9,9,9,.78);
+  .mainInner{
+    width: 100%;
+    display: flex;
+    flex-direction: column; 
+    overflow-y: scroll;
+  position: relative;
+  padding-top: 1rem;
+    .playlistPageSongs {
+      height: 100%;
+      color: white;
+      margin-top: 300px;
+      .playlistButtons {
+        display: flex;
+        align-items: center;
+        .playIcon {
+          @extend .playIcon;
+          
+          height: fit-content;
+          width: fit-content;
+          border-radius: 50%;
+          overflow: hidden;
+          background: $greenMain;
+          opacity: 1;
+          position: relative;
+          margin-left: 10px;
+          svg {
+            height: 45px;
+            width: 45px;
+          }
+        }
+      }
+      
+      .icons {
+        .icon {
+          margin-left: 1.5rem;
+        }
+        .iconsHeart {
+          width: 28px;
+          height: 28px;
+          svg {
+            fill: white;
+          }
+        }
+      }
+    }
+  }
+
+  h1 {
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+    color: white; // Highlights the title
+    font-family: circular-Bold; // Assuming you want to use this font
+  }
+
+  .search {
+    width: 40%; // Adjust as per your layout
+    .MuiOutlinedInput-root { // Target Material-UI TextField styles
+      fieldset {
+        border-color: white; // Change border color
+      }
+      &:hover fieldset {
+        border-color: white; // Change border color on hover
+      }
+      &.Mui-focused fieldset {
+        border-color: white; // Change border color when focused
+      }
+      input {
+        color: $greyText; // Change input text color
+      }
+      label {
+        color: $greyText; // Change label color
+      }
+    }
+  }
+}
